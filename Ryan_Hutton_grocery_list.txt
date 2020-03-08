@@ -4,7 +4,7 @@
 # Institution:  Southern New Hampshire University
 # Date:  2 February 2019
 
-# Prompt: Your task for thie project is to create a very simple grocery list script. 
+# Prompt: Your task for this project is to create a very simple grocery list script. 
 # This script emphasizes the importance of using lists, dictionaries, and loop types
 # within your script, and how the use of those functions shapes your approach to 
 # creating a script.
