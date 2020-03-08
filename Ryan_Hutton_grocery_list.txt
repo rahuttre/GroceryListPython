@@ -1,0 +1,56 @@
+﻿# Name:  Ryan Hutton
+# Assignment: Final Project Script Two - Grocery List
+# Course:  IT 140 - Introduction to Scripting
+# Institution:  Southern New Hampshire University
+# Date:  2 February 2019
+
+# Prompt: Your task for thie project is to create a very simple grocery list script. 
+# This script emphasizes the importance of using lists, dictionaries, and loop types
+# within your script, and how the use of those functions shapes your approach to 
+# creating a script.
+
+# Creating an empty dictionary and list, respectively, to be updated later.
+grocery_item = {}
+grocery_history = []
+
+stop = 'go'
+
+while (stop != 'q' or stop != 'Q'):   
+  item_name = input("Item name:\n")
+  quantity = input("Quantity purchased:\n")
+  cost = input("Price per item:\n")
+  
+  # Adding each item collected from the user to the dictionary, 'grocery_item'.
+  # The user inputs are stored in the dictionary according to their key value and
+  # and value type, and the dictionary is updated. Each item is then added to the 
+  # grocery_history list via the append() function.  This entire process is iterated 
+  # through a while loop to repeat the process if the user decides to continue, otherwise, the loop quits.
+  grocery_item = {'name':item_name, 'number':int(quantity), 'price':float(cost)}
+  grocery_history.append(grocery_item)
+  
+  program_control = input("Would you like to enter another item?\nType 'c' for continue or 'q' to quit:\n")
+  
+  # 'program_control' above accepts user input and is used to modify the global variable, stop.
+  # Again, if the user inputs 'c', the process repeats itself, otherwise, quit this step.
+  if (program_control == 'c' or program_control == 'C'):
+    stop = program_control
+    continue
+  else:
+    stop = program_control
+    break
+
+grand_total = 0
+
+# A for loop is used to iterate throgh the length of the grocery_history list.  Each item's
+# total is calculated by accessing the grocery_history's ith element and its key values 
+# (number/quantity and price).  This item total is then added to the grand_total.  Each
+# grocery item is printed out and its total.  grand_total is printed out as the last step.
+for i in range(0, len(grocery_history)):  
+  item_total = (grocery_history[i]['number'] * grocery_history[i]['price'])
+  grand_total += item_total
+  
+  print(grocery_history[i]['number'], grocery_history[i]['name'], "@ $%.2f" % + grocery_history[i]['price'], "ea $%.2f" % + item_total)
+  
+  item_total = 0
+
+print("Grand total: $%.2f" % + grand_total)
